@@ -1,6 +1,8 @@
+package Practice;
+
 import java.util.Stack;
 
-public class Practice {
+public class PracticeDriver {
 
     public static void main(String[] args) {
         String text1 = "racecar";
@@ -46,7 +48,7 @@ public class Practice {
 
     // Question 9:
     public static <T> StackInterface<T> createCopyStack(StackInterface<T> originalStack) {
-        StackInterface<T> copyStack = new LinkedStack<T>(); // or these could be ArrayStack
+        StackInterface<T> copyStack = new LinkedStack<T>(); // or these could be Homework.ArrayStack
         StackInterface<T> reverseStack = new LinkedStack<T>();
 
         while (!originalStack.isEmpty()) {
