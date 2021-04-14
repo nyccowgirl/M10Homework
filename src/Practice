@@ -1,0 +1,49 @@
+1.  stack 1: a, c, d
+    stack 2: b, e
+
+2.  ()({} => unbalanced, extra open
+    (({})} => unbalanced, mismatched
+    ()([]) => balanced
+    []{()}) => unbalanced, extra close
+
+3.  a * ( b + c ) / d => abc+*d/
+    (a * b + c) * (d - e - f) => ab*c+de-f-*
+    a + ( b + c * ( d - e + f ) ) => abcde-f+*++
+
+4.  a d b / - c + => 2
+    f b / f c / / => 1.5
+    f c b * / c- => -2
+
+5.  ( a + b) / ( c - d) - d
+    operatorStack: (+
+    valueStack: ab
+    operandTwo = b
+    operandOne = a
+    topOperator = +
+
+    operatorStack: /(-
+    valueStack: 3cd
+    operandTwo = d
+    operandOne = c
+    topOperator = -
+    result = c - d = -1
+
+    operatorStack: /
+    valueStack: 3-1
+    // precedence of - is <= /
+    operandTwo = -1
+    operandOne = 3
+    topOperator = /
+    result = 3/-1 = -3
+
+    operatorStack: -
+    valueStack: -3d
+    operandTwo = d
+    operandOne = -3
+    topOperator = -
+    result = -3 - 4 = -7
+
+    operatorStack:
+    valueStack: -7
+
+    result (valueStack.peek()) => -7
