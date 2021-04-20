@@ -191,12 +191,5 @@ public class HomeworkM10Driver {
 			System.out.println("       Actual size = " + actualAfterSize);
 			
 		}
-	
-		
 	}
-	
-	
-	
-	
-    
 }

@@ -35,19 +35,19 @@ public class HomeworkM10FolderDriver {
 		printFolderContentsHelper(topFolder, 0, indent);
 	}
 	private static void printFolderContentsHelper(Folder topFolder, int indentationIndex, boolean indent) {
-		for(int i=0; indent && i<indentationIndex; i++) {
+		for (int i = 0; indent && i < indentationIndex; i++) {
 			System.out.print("   ");
 		}
 		System.out.println(topFolder);
 		if(!topFolder.getFileList().isEmpty()) {
-			for(int i=0; indent && i<indentationIndex+1; i++) {
+			for (int i = 0; indent && i < indentationIndex+1; i++) {
 				System.out.print("   ");
 			}
 			System.out.println("Files: " + topFolder.getFileList()); // small part solving now- print the files in the current folder
 		}
 		
 		List<Folder> subfolderList = topFolder.getFolderList();
-		for(Folder subfolder : subfolderList) { 
+		for (Folder subfolder : subfolderList) {
 			printFolderContentsHelper(subfolder, indentationIndex+1, indent); // recursive call
 		}
 		
@@ -62,18 +62,18 @@ public class HomeworkM10FolderDriver {
 		Stack<Integer> indentStack = new Stack<>();		// track indent level in separate stack
 		indentStack.push(0);
 
-		while(!folderStack.isEmpty()) {
+		while (!folderStack.isEmpty()) {
 			Folder current = folderStack.pop();
 			int indentationIndex = indentStack.pop();
 
-			for(int i = 0; i < indentationIndex; i++) {
+			for (int i = 0; i < indentationIndex; i++) {
 				System.out.print("   ");
 			}
 
 			System.out.println(current);
 
-			if(!current.getFileList().isEmpty()) {
-				for(int i = 0; i < indentationIndex + 1; i++) {
+			if (!current.getFileList().isEmpty()) {
+				for (int i = 0; i < indentationIndex + 1; i++) {
 					System.out.print("   ");
 				}
 
